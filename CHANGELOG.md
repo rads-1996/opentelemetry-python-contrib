@@ -26,6 +26,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - `opentelemetry-instrumentation-starlette`/`opentelemetry-instrumentation-fastapi`: Fixes a crash when host-based routing is used
   ([#3507](https://github.com/open-telemetry/opentelemetry-python-contrib/pull/3507))
 - `opentelemetry-instrumentation-fastapi`: Fixes issue [#2808](https://github.com/open-telemetry/opentelemetry-python-contrib/issues/2808)
+  ([#3731](https://github.com/open-telemetry/opentelemetry-python-contrib/pull/3731))
 
 ### Added
 
