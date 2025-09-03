@@ -19,8 +19,8 @@ from timeit import default_timer
 from typing import Callable
 
 from django import VERSION as django_version
-from django.http import HttpRequest, HttpResponse
 from django.core.handlers.wsgi import WSGIRequest
+from django.http import HttpRequest, HttpResponse
 
 from opentelemetry.context import detach
 from opentelemetry.instrumentation._semconv import (
@@ -176,7 +176,9 @@ class _DjangoMiddleware(MiddlewareMixin):
                         try:
                             method = getattr(value, "method", "UNKNOWN")
                             request_path = getattr(value, "path", "UNKNOWN")
-                            new_values.append(f"HttpRequest({method} {request_path})")
+                            new_values.append(
+                                f"HttpRequest({method} {request_path})"
+                            )
                         except (AttributeError, ValueError, TypeError):
                             new_values.append("HttpRequest(...)")
                     else:
@@ -298,10 +300,8 @@ class _DjangoMiddleware(MiddlewareMixin):
                         wsgi_collect_custom_request_headers_attributes(carrier)
                     )
                     # Process custom attributes to handle WSGIRequest objects
-                    custom_attributes = (
-                        self.format_request_objects_in_headers(
-                            custom_attributes
-                        )
+                    custom_attributes = self.format_request_objects_in_headers(
+                        custom_attributes
                     )
 
                     if len(custom_attributes) > 0:
