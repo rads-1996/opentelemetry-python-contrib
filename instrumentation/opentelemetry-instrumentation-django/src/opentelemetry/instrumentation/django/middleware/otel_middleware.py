@@ -173,8 +173,10 @@ class _DjangoMiddleware(MiddlewareMixin):
                     try:
                         method = getattr(value, "method", "UNKNOWN")
                         request_path = getattr(value, "path", "UNKNOWN")
-                        value_list[index] = f"HttpRequest({method} {request_path})"
-                    except Exception: # pylint: disable=broad-exception-caught
+                        value_list[index] = (
+                            f"HttpRequest({method} {request_path})"
+                        )
+                    except Exception:  # pylint: disable=broad-exception-caught
                         value_list[index] = "HttpRequest(...)"
         return attributes
 
