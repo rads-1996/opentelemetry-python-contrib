@@ -9,8 +9,12 @@ components:
   instrumentation/opentelemetry-instrumentation-asyncio:
     - bourbonkk
 
+  instrumentation/opentelemetry-instrumentation-botocore:
+    - lukeina2z
+    - yiyuan-he
+
   instrumentation/opentelemetry-instrumentation-pymssql:
-     - guillaumep
+    - guillaumep
 
   instrumentation/opentelemetry-instrumentation-urllib:
     - shalevr
@@ -40,3 +44,10 @@ components:
   util/opentelemetry-util-genai:
     - DylanRussell
     - keith-decker
+
+  instrumentation-genai/opentelemetry-instrumentation-langchain:
+    - zhirafovod
+    - wrisa
+
+  instrumentation-genai/opentelemetry-instrumentation-openai-agents-v2:
+    - nagkumar91
